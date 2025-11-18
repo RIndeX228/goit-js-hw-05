@@ -1,11 +1,5 @@
 const getTotalBalanceByGender = (users, gender) => {
-    let total = 0;
-    users.forEach(user => {
-        if (gender === user.gender) {
-            total += user.balance;
-        }
-    });
-    return total;
+  users.filter(user => user.gender === gender).map(user => user.balance).reduce((acc, balance) => acc + balance, 0);
 };
 
 
